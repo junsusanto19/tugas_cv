@@ -1,0 +1,195 @@
+<!-- Home Section Start -->
+ <!DOCTYPE html>
+<!-- Website - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Responsive Portfolio Website HTML CSS| CodingNepal</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Fontawesome CDN Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <!-- Move to up button -->
+  <div class="scroll-button">
+    <a href="index.html"><i class="fas fa-arrow-up"></i></a>
+  </div>
+  <!-- navgaition menu -->
+  <nav>
+    <div class="navbar">
+      <div class="logo"><a href="index.html">Tugas UTS</a> <a style="font-size:larger;"> &nbsp;Computer Vision</a></div>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="project.html">Project</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <div class="cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
+      </ul>
+      <div class="media-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="menu-btn">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+
+  <!-- My Services Section Start -->
+  <section class="" id="">
+    <div class="content">
+        <br>
+        <br>
+        <br>
+      <div class="title"><span>Relevansi MNIST dalam Advance Computer Vision</span></div>
+      <div>
+        <br>
+        <p style="  text-align: justify;
+  color: #0E2431; line-height: 2;">
+            <img style="float: left;
+            width: 530px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            margin-right: 20px;" src="Images/mnist_relevance_trend.png" alt="" />
+
+    Gambar di samping menampilkan tren peningkatan akurasi model Convolutional Neural Network (CNN) terhadap beberapa dataset populer dari tahun 2015 hingga 2025. Dataset yang dibandingkan antara lain MNIST, Fashion-MNIST, dan CIFAR-10, masing-masing merepresentasikan tingkat kompleksitas visual yang berbeda.
+
+Dari grafik terlihat bahwa akurasi model terhadap MNIST telah mencapai titik jenuh (saturation point) sejak tahun 2019. Sebagian besar arsitektur CNN modern, mulai dari LeNet-5 hingga ResNet dan EfficientNet, sudah mampu memperoleh akurasi di atas 99,5%, yang menandakan bahwa dataset ini sudah terlalu mudah untuk dijadikan tolok ukur kecerdasan visual terkini. Hal ini mengindikasikan bahwa MNIST tidak lagi menantang bagi model deep learning modern, karena variasi bentuk digit yang terbatas dan kondisi gambar yang sangat bersih.
+
+Sebaliknya, Fashion-MNIST dan CIFAR-10 memperlihatkan tren peningkatan akurasi yang masih signifikan hingga tahun 2025. Fashion-MNIST, yang memuat gambar pakaian hitam-putih berukuran 28x28 piksel, dirancang sebagai drop-in replacement MNIST yang lebih sulit karena memiliki kontur dan tekstur lebih kompleks. Sementara CIFAR-10, yang terdiri dari gambar berwarna 32x32 piksel dari berbagai kategori objek (pesawat, mobil, hewan, dll.), menawarkan tantangan nyata yang lebih mendekati citra dunia nyata.
+
+Grafik ini menunjukkan bagaimana relevansi MNIST dalam riset Computer Vision telah bergeser: dari dataset benchmark utama menjadi dataset pengantar pembelajaran. Kini, MNIST lebih sering digunakan untuk Menguji arsitektur baru pada tahap awal sebelum diterapkan ke dataset kompleks, Mengajarkan konsep dasar CNN dan backpropagation, Melakukan sanity check terhadap pipeline pelatihan. Dengan demikian, meskipun MNIST telah “selesai ditaklukkan”, ia tetap menjadi dataset simbolik dalam perjalanan evolusi Computer Vision, terutama sebagai fondasi untuk memahami generalisasi model pada dataset yang lebih sulit dan realistis.
+  </p>
+<p>&nbsp;</p>
+<h3 style="color:#1e293b;">6.1. MNIST sebagai Fondasi Historis</h3>
+  <p style="color:#334155; margin-left: 35px;  text-align: justify;">
+    Dataset MNIST pertama kali dikembangkan oleh Yann LeCun sebagai standar pembelajaran jaringan saraf konvolusional.
+    Model-model awal seperti LeNet dan AlexNet memanfaatkan MNIST untuk memvalidasi efektivitas lapisan konvolusional.
+    Hingga kini, MNIST masih digunakan sebagai titik awal untuk pembelajaran dan eksperimen algoritma baru sebelum diterapkan pada dataset yang lebih kompleks seperti ImageNet.
+  </p>
+<p>&nbsp;</p>
+  <h3 style="color:#1e293b;">6.2. Kaitannya dengan Arsitektur Modern</h3>
+  <p style="color:#334155; margin-left: 38px; text-align: justify;">
+    MNIST masih sering digunakan untuk pengujian arsitektur <strong>CNN</strong>, <strong>Vision Transformer (ViT)</strong>, dan model <strong>hybrid</strong>.
+    Peneliti menggunakan MNIST sebagai dataset kecil untuk memvalidasi ide-ide baru tanpa memerlukan sumber daya komputasi besar.
+    Beberapa penelitian seperti Dosovitskiy et al. (2021) dan Touvron et al. (2021) bahkan menggunakan MNIST untuk demonstrasi awal performa ViT.
+  </p>
+<p>&nbsp;</p>
+  <h3 style="color:#1e293b;">6.3. Generalisasi dan Tantangan Dataset Mudah</h3>
+  <p style="color:#334155; margin-left: 38px; text-align: justify;">
+    Karena MNIST mudah dipecahkan, akurasi mendekati 100% sering kali tidak lagi berarti. Fenomena ini mendorong munculnya dataset turunan seperti
+    Fashion-MNIST, KMNIST, MNIST-C, dan EMNIST untuk mengukur kemampuan generalisasi model terhadap data yang lebih beragam.
+  </p>
+<p>&nbsp;</p>
+  <h3 style="color:#1e293b;">6.4. Transfer Learning dan Meta-Learning</h3>
+  <p style="color:#334155; margin-left: 38px; text-align: justify;">
+    Dalam riset <em>transfer learning</em> dan <em>meta-learning</em>, MNIST digunakan sebagai domain sumber yang sederhana.
+    Hal ini membantu menilai kemampuan model dalam beradaptasi terhadap gaya tulisan baru, domain berbeda, dan tugas-tugas baru.
+  </p>
+<p>&nbsp;</p>
+  <h3 style="color:#1e293b;">6.5. Era Foundation Models</h3>
+  <p style="color:#334155; margin-left: 38px; text-align: justify;">
+    MNIST juga berperan dalam eksperimen awal <strong>Diffusion Models</strong> dan <strong>GAN</strong>, berfungsi sebagai dataset prototipe untuk memahami
+    bagaimana model generatif membangun representasi visual dari noise menjadi pola angka yang bermakna.
+  </p>
+<p>&nbsp;</p>
+  <h3 style="color:#1e293b;">6.6. Mengapa MNIST Masih Relevan</h3>
+  <ul style="color:#334155; margin-left: 57px;">
+    <li><strong>Reproducibility:</strong> mudah diuji ulang di berbagai sistem.</li>
+    <li><strong>Pedagogical Clarity:</strong> ideal untuk pengajaran konsep CNN dasar.</li>
+    <li><strong>Benchmark Konsisten:</strong> hasil antar model mudah dibandingkan.</li>
+    <li><strong>Rapid Prototyping:</strong> efisien untuk eksperimen cepat.</li>
+    <li><strong>Bridge to Complexity:</strong> jembatan ke dataset yang lebih menantang.</li>
+  </ul>
+
+  <hr style="margin:40px 0;">
+
+            <P>&nbsp;</P>
+              <h4 style="color:#1e293b;">Referensi (2020–2025)</h4>
+                <ul style="color:#334155; margin-left:22px;">
+                  <li>Dosovitskiy, A., et al. (2021). <em>An Image is Worth 16x16 Words</em>. ICLR.</li>
+                  <li>Touvron, H., et al. (2021). <em>Training Data-efficient Image Transformers</em>. ICML.</li>
+                  <li>Mu, N., & Gilmer, J. (2019). <em>MNIST-C</em>. arXiv:1906.02337.</li>
+                  <li>Radford, A., et al. (2021). <em>CLIP</em>. arXiv:2103.00020.</li>
+                  <li>Ho, J., et al. (2020). <em>Denoising Diffusion Probabilistic Models</em>. NeurIPS.</li>
+                  <li>Cohen, G., et al. (2017). <em>EMNIST</em>. arXiv:1702.05373.</li>
+                  <li>Clanuwat, T., et al. (2018). <em>KMNIST</em>.</li>
+                  <li>Xiao, H., et al. (2017). <em>Fashion-MNIST</em>. arXiv:1708.07747.</li>
+                  <li>Tan, M., & Le, Q. (2021). <em>EfficientNetV2</em>. ICML.</li>
+                  <li>Liu, Z., et al. (2022). <em>ConvNeXt</em>. CVPR.</li>
+                </ul>
+      </div>
+
+        <div class="post-navigation">
+            <a href="lebih_kurang.html" class="nav-btn prev">
+                <span class="arrow">Keunggulan & Keterbatasan &nbsp;←</span> Previous
+            </a>
+
+            <a href="eksperimen.html" class="nav-btn next">
+                Next <span class="arrow">→ Eksperimen</span>
+            </a>
+        </div>
+
+        <style>
+.post-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  padding-top: 25px;
+  border-top: 1px solid #e0e0e0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(90deg, #0078ff, #00b7ff);
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 120, 255, 0.2);
+}
+
+.nav-btn:hover {
+  background: linear-gradient(90deg, #005fcc, #0099ff);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 120, 255, 0.3);
+}
+
+.arrow {
+  font-size: 1.2em;
+}
+
+@media (max-width: 600px) {
+  .post-navigation {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+</style>
+
+  </section>
+
+  <!-- Footer Section Start -->
+  <footer>
+    <div class="text">
+      <span>Junaedy Susanto | &#169; 2025 All Rights Reserved</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

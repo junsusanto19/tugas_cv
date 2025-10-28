@@ -1,0 +1,386 @@
+<!-- Home Section Start -->
+ <!DOCTYPE html>
+<!-- Website - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Responsive Portfolio Website HTML CSS| CodingNepal</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Fontawesome CDN Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <!-- Move to up button -->
+  <div class="scroll-button">
+    <a href="index.html"><i class="fas fa-arrow-up"></i></a>
+  </div>
+  <!-- navgaition menu -->
+  <nav>
+    <div class="navbar">
+      <div class="logo"><a href="index.html">Tugas UTS</a> <a style="font-size:larger;"> &nbsp;Computer Vision</a></div>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="project.html">Project</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <div class="cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
+      </ul>
+      <div class="media-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="menu-btn">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+
+  <!-- My Services Section Start -->
+  <section class="" id="">
+    <div class="content">
+        <br>
+        <br>
+        <br>
+      <div class="title"><span>Keunggulan & Keterbatasan Dataset MNIST</span></div>
+      <div>
+        <br>
+        <p style="  text-align: justify;
+  color: #0E2431; line-height: 2;">
+            <!-- <img style="float: left;
+            width: 530px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            margin-right: 20px;" src="Images/pengantar.png" alt="" /> -->
+
+<p style="color:#475569; margin-bottom:24px;">
+    Untuk memvisualisasikan keunggulan, keterbatasan, dan tingkat kesulitan dataset MNIST, saya menulis skrip Python sederhana menggunakan pustaka Matplotlib dan NumPy. Pendekatan ini memungkinkan saya membuat grafik ilustratif tanpa perlu data numerik eksperimen yang kompleks.
+<p style="color:#475569; margin-bottom: 10px;">
+  
+Berikut cuplikan kode yang saya jalankan:
+  </p>
+<pre style="background-color:#0f172a; color:#e2e8f0; padding:16px; border-radius:12px; overflow-x:auto;">
+<code class="language-python">
+# ============================================================
+# Visualisasi Keunggulan, Keterbatasan, dan Varian Dataset MNIST
+# ============================================================
+
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+
+# Membuat folder output untuk menyimpan hasil grafik
+out_dir = Path('./output')
+out_dir.mkdir(exist_ok=True)
+
+# ------------------------------------------------------------
+# Grafik 1: Keunggulan MNIST (Pros)
+# ------------------------------------------------------------
+labels_pros = ["Accessibility", "Cleanliness", "Size for Learning", 
+               "Integration", "Pedagogical Value", "Reproducibility"]
+scores_pros = [9, 8, 8, 9, 9, 9]  # skala 1–10
+
+fig1, ax1 = plt.subplots(figsize=(8,5))
+y_pos = np.arange(len(labels_pros))
+ax1.barh(y_pos, scores_pros)
+ax1.set_yticks(y_pos)
+ax1.set_yticklabels(labels_pros)
+ax1.invert_yaxis()
+ax1.set_xlabel('Qualitative Score (1–10)')
+ax1.set_title('MNIST — Illustrative Pros Scores')
+plt.tight_layout()
+plt.savefig(out_dir / 'mnist_pros.png', dpi=150)
+plt.close()
+
+# ------------------------------------------------------------
+# Grafik 2: Keterbatasan MNIST (Cons)
+# ------------------------------------------------------------
+labels_cons = ["Visual Complexity", "Real-world Representativeness", 
+               "Benchmark Saturation", "Domain Variety", "Industrial Relevance"]
+scores_cons = [2, 3, 3, 2, 2]  # makin kecil = makin bermasalah
+
+fig2, ax2 = plt.subplots(figsize=(8,5))
+y_pos = np.arange(len(labels_cons))
+ax2.barh(y_pos, scores_cons)
+ax2.set_yticks(y_pos)
+ax2.set_yticklabels(labels_cons)
+ax2.invert_yaxis()
+ax2.set_xlabel('Qualitative Score (1–10) — Lower = More Problematic')
+ax2.set_title('MNIST — Illustrative Cons Scores')
+plt.tight_layout()
+plt.savefig(out_dir / 'mnist_cons.png', dpi=150)
+plt.close()
+
+# ------------------------------------------------------------
+# Grafik 3: Perbandingan Tingkat Kesulitan Dataset MNIST dan Variannya
+# ------------------------------------------------------------
+variants = ["MNIST", "Fashion-MNIST", "EMNIST", "KMNIST", "MNIST-C"]
+difficulty = [2, 6, 7, 7, 8]  # skala kesulitan 1–10
+
+fig3, ax3 = plt.subplots(figsize=(9,5))
+x = np.arange(len(variants))
+ax3.bar(x, difficulty)
+ax3.set_xticks(x)
+ax3.set_xticklabels(variants)
+ax3.set_ylabel('Illustrative Difficulty (1–10)')
+ax3.set_title('Difficulty Comparison: MNIST and its Variants')
+plt.tight_layout()
+plt.savefig(out_dir / 'mnist_variants.png', dpi=150)
+plt.close()
+
+print()
+</code>
+</pre>
+  <hr style="border:none; border-top:1px solid #e6eef6; margin:20px 0 30px 0;">
+<p>&nbsp;</p>
+<strong>Script Python diatas menghasilkan tiga grafik utama:</strong>
+<ul style="margin-left: 30px; margin-top: 10px;">
+<li style="margin-bottom: 6px;">Grafik Keunggulan (Pros) — menunjukkan aspek-aspek positif MNIST seperti aksesibilitas, keseragaman, dan nilai pedagogisnya.</li>
+<li style="margin-bottom: 6px;">Grafik Keterbatasan (Cons) — menggambarkan sisi lemah seperti rendahnya kompleksitas visual dan representasi dunia nyata.</li>
+<li style="margin-bottom: 6px;">Grafik Perbandingan Kesulitan Dataset — memperlihatkan tingkat kesulitan relatif antara MNIST dan beberapa turunannya seperti Fashion-MNIST, EMNIST, KMNIST, serta MNIST-C.</li>
+</ul>
+<p>&nbsp;</p>
+<table>
+<tr>
+<td><figcaption style="text-align:center; color:#64748b; font-size:19px; margin-top:8px; margin-bottom: 10px;">Keunggulan MNIST</figcaption><img src="Images/mnist_pros.png" style="max-width: 600px; float: left; margin-right: 20px; border: 2px solid rgb(0, 0, 0);"><figcaption style="text-align:center; color:#64748b; font-size:13px; margin-top:8px;">Ilustrasi: aspek-aspek keunggulan MNIST (skala kualitatif).</figcaption></td>
+<td><figcaption style="text-align:center; color:#64748b; font-size:19px; margin-top:8px; margin-bottom: 10px;">Keterbatasan MNIST</figcaption><img src="Images/mnist_cons.png" style="max-width: 600px; float: left; margin-right: 20px; border: 2px solid rgb(0, 0, 0);"><figcaption style="text-align:center; color:#64748b; font-size:13px; margin-top:8px;">Ilustrasi: aspek-aspek keterbatasan MNIST (skala kualitatif).</figcaption></td>
+<!-- <td><img src="Images/mnist_variants.png" style="max-width: 400px; float: left; margin-top: 30px; border: 2px solid rgb(0, 0, 0);"><figcaption style="text-align:center; color:#64748b; font-size:13px; margin-top:8px;">Perbandingan ilustratif kesulitan: MNIST vs Fashion-MNIST, EMNIST, KMNIST, MNIST-C.</figcaption></td> -->
+</tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+  <h2 style="color:#0b4a6f; font-size:30px; margin-bottom:8px;">Keunggulan MNIST</h2>
+
+  
+    <strong>1. Kesederhanaan dan aksesibilitas:</strong> 
+    <p style="margin-top:6px; margin-left: 15px;">
+    Salah satu aspek yang membuat MNIST tetap digunakan secara luas adalah kemudahan akses dan
+    penggunaan. Dengan satu baris kode di library seperti TensorFlow atau PyTorch, dataset dapat langsung diunduh dan siap dipakai
+    (contoh: <code>tf.keras.datasets.mnist.load_data()</code>, <code>torchvision.datasets.MNIST</code>). Kesederhanaan ini penting dalam konteks
+    pendidikan — mahasiswa dapat memahami alur pelatihan model dari awal (data → model → evaluasi) tanpa tersangkut pada proses pembersihan data
+    yang kompleks. Hasil pelatihan dan metrik juga mudah dibandingkan antar-peneliti karena format dan pembagian train/test yang standar.
+  </p>
+<p>&nbsp;</p>
+
+    <strong>2. Kualitas anotasi dan normalisasi:</strong>
+    <p style="margin-top:6px; margin-left: 15px;">
+    MNIST bukan sekadar kumpulan scan tulisan tangan — dataset ini mengalami proses
+    normalisasi geometri: setiap digit diskalakan agar muat dalam kotak 20×20, kemudian ditempatkan pada kanvas 28×28 dan dipusatkan sehingga
+    pusat massa piksel mendekati tengah. Proses ini menghasilkan data yang relatif bersih, konsisten, dan dapat digunakan untuk
+    eksperimen yang menuntut kontrol variabel yang ketat (mis. membandingkan arsitektur jaringan).
+  </p>
+<p>&nbsp;</p>
+
+    <strong>3. Ukuran yang ideal untuk pembelajaran awal dan eksperimen cepat:</strong>
+    <p style="margin-top:6px; margin-left: 15px;">
+    Dengan 60.000 sampel pelatihan, MNIST cukup besar untuk
+    mempelajari pola tulisan tangan tetapi tetap kecil secara komputasi jika dibandingkan dataset modern. Ini membuatnya ideal untuk:
+    - eksperimen hyperparameter secara luas; - demonstrasi pedagogis; - pengujian hipotesis kecil; - benchmarking kecepatan training pada hardware.
+    Kecepatan iterasi ini membantu banyak peneliti mempercepat siklus eksperimen.
+  </p>
+<p>&nbsp;</p>
+
+    <strong>4. Integrasi dan dukungan luas di ekosistem ML:</strong>
+    <p style="margin-top:6px; margin-left: 15px;">
+    MNIST sudah menjadi bagian dari dokumentasi dan tutorial sejumlah besar
+    pustaka (Keras, PyTorch, scikit-learn). Dokumentasi, contoh code, notebook, dan kompetisi di platform seperti Kaggle menjadikannya titik awal
+    yang ramah bagi pemula. Selain itu, ekosistem ini mempermudah reproducibility karena banyak eksperimen menggunakan versi data dan
+    loader yang sama.
+  </p>
+<p>&nbsp;</p>
+  
+    <strong>5. Relevansi pedagogis & kemampuan menjelaskan:</strong>
+    <p style="margin-top:6px; margin-left: 15px;">
+    Ketika tujuan adalah mengajarkan konsep dasar—seperti convolutional filters,
+    backpropagation, regularization, dan overfitting—MNIST sangat berguna. Visualisasi filter pada CNN kecil, interpretasi neuron, serta
+    demonstrasi grad-CAM atau occlusion sensitivity menjadi lebih mudah dipahami pada citra 28×28.
+  </p>
+<p>&nbsp;</p>
+    <strong>6. Stabilitas benchmark & reproducibility:</strong>
+    <p style="margin-top:6px; margin-left: 15px;">
+    Data yang statis, jumlah yang besar namun terbatas, serta pembagian train/test tetap
+    membantu memastikan hasil yang dapat direplikasi. Ini penting untuk eksperimen metodologis yang mengharuskan perbandingan yang adil.
+  </p>
+<p>&nbsp;</p>
+
+  <hr style="margin:40px 0;">
+
+
+  <h2 style="color:#0b4a6f; font-size:30px; margin-bottom:8px;">Keterbatasan MNIST</h2>
+
+
+    <strong>1. Kompleksitas visual rendah:</strong>
+        <p style="margin-top:6px; margin-left: 15px;">
+    MNIST berisi citra grayscale sederhana tanpa tekstur, warna, atau latar yang rumit.
+    Objek hanya satu per gambar, selalu berada di tengah, dan memiliki kontras tinggi terhadap latar. Model yang menunjukkan performa
+    tinggi di MNIST belum tentu sanggup memproses gambar berwarna beresolusi tinggi dengan banyak objek (mis. scene dari kamera jalan).
+  </p>
+<p>&nbsp;</p>
+
+    <strong>2. Tidak mewakili kondisi dunia nyata:</strong>
+        <p style="margin-top:6px; margin-left: 15px;">
+    Faktor penting pada citra dunia nyata—pencahayaan tidak merata, bayangan, background clutter,
+    noise sensor—tidak tercakup dalam MNIST. Oleh karena itu, model yang "terlatih" pada MNIST umumnya memiliki ketahanan (robustness) rendah
+    terhadap gangguan tersebut. Versi yang menambahkan gangguan seperti MNIST-C menunjukkan penurunan performa signifikan pada model yang sebelumnya
+    tampak sempurna di MNIST.
+  </p>
+<p>&nbsp;</p>
+
+    <strong>3. Benchmark jenuh & overfitting akademik:</strong>
+        <p style="margin-top:6px; margin-left: 15px;">
+    Banyak arsitektur modern telah mencapai akurasi mendekati 99.8%—ruang peningkatan di MNIST
+    menjadi terbatas. Sejumlah penelitian fokus pada kenaikan akurasi yang sangat kecil (mis. 99.72% → 99.74%), yang seringkali
+    tidak memiliki dampak praktis signifikan. Hal ini dapat menyebabkan alokasi sumber daya penelitian ke arah optimasi yang tidak
+    berdampak besar pada masalah nyata.
+  </p>
+<p>&nbsp;</p>
+
+    <strong>4. Kurangnya variasi domain:</strong>
+        <p style="margin-top:6px; margin-left: 15px;">
+    Semua sampel berasal dari sumber relatif homogen (varian tulisan tangan tertentu),
+    sehingga model tidak diuji pada domain shift atau masalah adaptasi domain. Untuk riset yang menekankan generalisasi across-domains,
+    MNIST harus diasosiasikan dengan varian dataset lain.
+  </p>
+<p>&nbsp;</p>
+
+    <strong>5. Keterbatasan untuk skala industri:</strong>
+        <p style="margin-top:6px; margin-left: 15px;">
+    Aplikasi industri (OCR untuk dokumen berwarna, deteksi objek pada citra medis, analisis video)
+    biasanya membutuhkan dataset yang lebih rumit dan ukuran yang lebih besar. Mengandalkan MNIST sebagai satu-satunya bukti performa untuk deployment
+    komersial dapat menimbulkan risiko nyata.
+  </p>
+<p>&nbsp;</p>
+
+  <hr style="margin:40px 0;">
+
+  <h2 style="color:#0b4a6f; font-size:30px; margin-bottom:8px;">Alternatif & Evolusi Dataset</h2>
+
+  <p style="margin-bottom: 10px;">
+    Untuk mengatasi keterbatasan tersebut, komunitas ML mengembangkan beberapa dataset turunan dan alternatif:
+  </p>
+  <ul style="margin-left:20px; color:#334155;">
+    <li><strong>Fashion-MNIST (2017)</strong>: mengganti angka dengan gambar pakaian (10 kelas), memberi tantangan tekstur dan bentuk yang lebih kaya.</li>
+    <li><strong>EMNIST (2017)</strong>: memperluas menjadi huruf alfabet dan digit sehingga menyajikan masalah multi-class yang lebih kompleks.</li>
+    <li><strong>KMNIST (2019)</strong>: dataset tulisan Kana Jepang — memperkenalkan struktur karakter yang berbeda.</li>
+    <li><strong>MNIST-C (2021)</strong>: menambahkan gangguan (noise, blur, fog, brightness dll.) untuk menguji robustness model.</li>
+  </ul>
+
+  <p style="margin-top: 10px;">
+    Perbandingan tingkat kesulitan ilustratif antara MNIST dan variannya dapat dilihat pada grafik di bawah (angka adalah skala ilustratif 1–10;
+    semakin tinggi berarti lebih sulit untuk model umum).
+  </p>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+  <figure style="margin:18px 0 30px 0;">
+    <figcaption style="text-align:center; color:#64748b; font-size:19px; margin-top:8px; margin-bottom: 10px;">Grafik Perbandingan Dataset</figcaption>
+    <img src="Images/mnist_variants.png" alt="MNIST Variants Difficulty Comparison" style="display:block; max-width:720px; width:100%; box-shadow:0 8px 24px rgba(15,23,42,0.06); border-radius:8px; margin:auto;">
+    <figcaption style="text-align:center; color:#64748b; font-size:13px; margin-top:8px;">Perbandingan ilustratif kesulitan: MNIST vs Fashion-MNIST, EMNIST, KMNIST, MNIST-C.</figcaption>
+  </figure>
+
+  <h3 style="color:#0f172a; font-size:18px; margin-top:8px; margin-bottom: 10px;">Rekomendasi praktis untuk peneliti & pengajar</h3>
+
+  <ol style="margin-left:20px; color:#334155;">
+    <li><strong>Gunakan MNIST sebagai baseline & bahan ajar:</strong> untuk demonstrasi dasar dan debugging. Pastikan Anda menyertakan konteks keterbatasan ketika mempresentasikan hasil.</li>
+    <li><strong>Tambahkan dataset lebih menantang untuk klaim generalisasi:</strong> seperti Fashion-MNIST, EMNIST, CIFAR-10/100, atau domain-spesifik dataset.</li>
+    <li><strong>Uji robustness:</strong> uji model dengan gangguan (noise, rotasi, transformasi) — MNIST-C adalah contoh bagus untuk eksperimen semacam ini.</li>
+    <li><strong>Laporkan metrik komprehensif:</strong> selain akurasi, tampilkan confusion matrix, per-class recall/precision, dan analisa kesalahan (error analysis).</li>
+    <li><strong>Hindari 'MNIST trap':</strong> jangan menjadikan kenaikan akurasi minor di MNIST sebagai satu-satunya bukti kemajuan metodologis.</li>
+  </ol>
+
+  <hr style="margin:40px 0;">
+
+            <P>&nbsp;</P>
+            <B>Referensi:</B>
+            <li style="margin-left: 30px; margin-bottom: 5px;">
+                Alzubaidi, L., et al. (2023). <em>A survey on deep learning tools dealing with data scarcity</em>. Journal of Big Data. Springer. <a href="https://journalofbigdata.springeropen.com/articles/10.1186/s40537-023-00727-2" target="_blank">https://journalofbigdata.springeropen.com/articles/10.1186/s40537-023-00727-2</a>
+            </li>
+            <li style="margin-left: 30px; margin-bottom: 5px;">
+                Kim, J., et al. (2024). <em>Benchmarking Robustness in Deep Learning Using MNIST-C</em>.  
+            </li>
+            <li style="margin-left: 30px; margin-bottom: 5px;">
+                Yadav, M., & Singh, A. (2022). <em>Evaluating Deep Neural Networks on MNIST Variants</em>.
+            </li>
+            <li style="margin-left: 30px; margin-bottom: 5px;">
+                Greydanus, S., et al. (2024). <em>Scaling Down Deep Learning with MNIST-1D</em>. arXiv:2402.05821. <a href="https://arxiv.org/abs/2011.14439" target="_blank">https://arxiv.org/abs/2011.14439</a>
+            </li>
+            <li style="margin-left: 30px; margin-bottom: 5px;">
+                Brijeshkumar Y. Panchal (2022). <em>Study and Develop a Convolutional Neural Network for MNIST Handwritten Digit Classification. <a href="https://www.researchgate.net/publication/361728427_Study_and_Develop_a_Convolutional_Neural_Network_for_MNIST_Handwritten_Digit_Classification" target="_blank">https://www.researchgate.net/publication/361728427_Study_and_Develop_a_Convolutional_Neural_Network_for_MNIST_Handwritten_Digit_Classification</a>
+            </li>
+      </div>
+
+        <div class="post-navigation">
+            <a href="karakteristik.html" class="nav-btn prev">
+                <span class="arrow">Karakteristik &nbsp;←</span> Previous
+            </a>
+
+            <a href="relevansi.html" class="nav-btn next">
+                Next <span class="arrow">→ Relevansi</span>
+            </a>
+        </div>
+
+        <style>
+.post-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  padding-top: 25px;
+  border-top: 1px solid #e0e0e0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(90deg, #0078ff, #00b7ff);
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 120, 255, 0.2);
+}
+
+.nav-btn:hover {
+  background: linear-gradient(90deg, #005fcc, #0099ff);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 120, 255, 0.3);
+}
+
+.arrow {
+  font-size: 1.2em;
+}
+
+@media (max-width: 600px) {
+  .post-navigation {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+</style>
+
+  </section>
+
+  <!-- Footer Section Start -->
+  <footer>
+    <div class="text">
+      <span>Junaedy Susanto | &#169; 2025 All Rights Reserved</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

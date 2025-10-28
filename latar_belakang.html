@@ -1,0 +1,162 @@
+<!-- Home Section Start -->
+ <!DOCTYPE html>
+<!-- Website - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Responsive Portfolio Website HTML CSS| CodingNepal</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Fontawesome CDN Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <!-- Move to up button -->
+  <div class="scroll-button">
+    <a href="index.html"><i class="fas fa-arrow-up"></i></a>
+  </div>
+  <!-- navgaition menu -->
+  <nav>
+    <div class="navbar">
+      <div class="logo"><a href="index.html">Tugas UTS</a> <a style="font-size:larger;"> &nbsp;Computer Vision</a></div>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="project.html">Project</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <div class="cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
+      </ul>
+      <div class="media-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="menu-btn">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+
+  <!-- My Services Section Start -->
+  <section class="" id="">
+    <div class="content">
+        <br>
+        <br>
+        <br>
+      <div class="title"><span>Latar Belakang</span></div>
+      <div>
+        <br>
+        <br>
+        <p style="  text-align: justify;
+  color: #0E2431; line-height: 2;">
+            <!-- <img style="float: left;
+            width: 530px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            margin-right: 20px;" src="Images/pengantar.png" alt="" /> -->
+
+            Dataset <strong>MNIST</strong> lahir dari kebutuhan para peneliti pada tahun 1990-an untuk memiliki kumpulan data tulisan tangan yang seragam,
+            mudah digunakan, dan dapat dipakai bersama untuk menguji berbagai algoritma pengenalan pola. Sebelum MNIST muncul, terdapat dataset asli bernama
+            <em>NIST Special Database 19</em> yang dikembangkan oleh <strong>National Institute of Standards and Technology</strong> (NIST) di Amerika Serikat.
+            Dataset tersebut berisi digit tulisan tangan dari dua kelompok penulis yang berbeda: pegawai pemerintahan (penulis dewasa) dan siswa sekolah dasar.
+            Namun, data NIST ini memiliki masalah inkonsistensi karena perbedaan gaya tulisan, ukuran, dan resolusi yang tidak seragam. Melihat permasalahan ini, <strong>Yann LeCun</strong>, <strong>Corinna Cortes</strong>, dan <strong>Christopher J.C. Burges</strong> kemudian melakukan
+    modifikasi besar terhadap dataset NIST. Mereka melakukan proses <em>normalisasi geometrik</em>, <em>penskalaan ulang ke ukuran 28x28 piksel</em>,
+    serta memastikan setiap digit ditempatkan di tengah bingkai gambar. Proses inilah yang melahirkan nama <strong>Modified NIST</strong> atau disingkat
+    <strong>MNIST</strong>. Tujuan utama penciptaan MNIST adalah menyediakan dataset standar yang dapat digunakan untuk mengukur dan membandingkan performa berbagai algoritma
+    pembelajaran mesin. Pada masa itu, jaringan saraf tiruan (neural network) belum sepopuler sekarang, dan MNIST menjadi salah satu dataset yang membantu
+    menunjukkan potensi besar metode <em>Gradient-Based Learning</em> untuk tugas pengenalan tulisan tangan. Dalam publikasi tahun 1998 berjudul 
+    <em>"Gradient-Based Learning Applied to Document Recognition"</em>, LeCun memperkenalkan model <strong>LeNet-5</strong> — arsitektur CNN awal yang
+    mencapai performa luar biasa pada dataset MNIST dan menjadi cikal bakal arsitektur CNN modern seperti AlexNet dan ResNet. Seiring berjalannya waktu, MNIST menjadi <em>benchmark</em> de facto bagi komunitas Machine Learning. Dataset ini diintegrasikan ke berbagai framework
+    populer seperti TensorFlow, PyTorch, dan Keras, memungkinkan siapa pun untuk mengunduh dan menggunakannya hanya dengan satu baris kode. 
+    Lebih dari dua dekade kemudian, meskipun banyak dataset baru bermunculan seperti <strong>Fashion-MNIST</strong> dan <strong>EMNIST</strong>, 
+    MNIST tetap menjadi tolok ukur klasik yang digunakan untuk pengajaran dasar Deep Learning.
+Menariknya, pada era 2020–2025, beberapa penelitian modern mengkaji kembali MNIST untuk memahami aspek interpretabilitas model dan 
+    <em>robustness</em> terhadap gangguan visual. Misalnya, <strong>Greydanus et al. (2024)</strong> memperkenalkan <em>MNIST-1D</em>, versi sederhana
+    satu dimensi dari MNIST untuk mempelajari perilaku jaringan saraf dalam lingkungan yang terkontrol. Hal ini menunjukkan bahwa meskipun dataset MNIST
+    sederhana, nilainya dalam riset dasar masih sangat relevan hingga kini.
+
+
+            <P>&nbsp;</P>
+            <B>Referensi:</B>
+            <li style="margin-left: 30px; margin-bottom: 5px;">
+                Greydanus, S., et al. (2024). <em>Scaling Down Deep Learning with MNIST-1D</em>. arXiv:2402.05821. <a href="https://arxiv.org/abs/2011.14439" target="_blank">https://arxiv.org/abs/2011.14439</a>
+            </li>
+            <li style="margin-left: 30px; margin-bottom: 5px;">
+                Alzubaidi, L., et al. (2023). <em>A survey on deep learning tools dealing with data scarcity</em>. Journal of Big Data. Springer. <a href="https://journalofbigdata.springeropen.com/articles/10.1186/s40537-023-00727-2" target="_blank">https://journalofbigdata.springeropen.com/articles/10.1186/s40537-023-00727-2</a>
+            </li>
+            <li style="margin-left: 30px; margin-bottom: 5px;">
+                Brijeshkumar Y. Panchal (2022). <em>Study and Develop a Convolutional Neural Network for MNIST Handwritten Digit Classification. <a href="https://www.researchgate.net/publication/361728427_Study_and_Develop_a_Convolutional_Neural_Network_for_MNIST_Handwritten_Digit_Classification" target="_blank">https://www.researchgate.net/publication/361728427_Study_and_Develop_a_Convolutional_Neural_Network_for_MNIST_Handwritten_Digit_Classification</a>
+            </li>
+      </div>
+
+        <div class="post-navigation">
+            <a href="pengantar.html" class="nav-btn prev">
+                <span class="arrow">Pengantar &nbsp;←</span> Previous
+            </a>
+
+            <a href="karakteristik.html" class="nav-btn next">
+                Next <span class="arrow">→ Karakteristik</span>
+            </a>
+        </div>
+
+        <style>
+.post-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  padding-top: 25px;
+  border-top: 1px solid #e0e0e0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(90deg, #0078ff, #00b7ff);
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 120, 255, 0.2);
+}
+
+.nav-btn:hover {
+  background: linear-gradient(90deg, #005fcc, #0099ff);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 120, 255, 0.3);
+}
+
+.arrow {
+  font-size: 1.2em;
+}
+
+@media (max-width: 600px) {
+  .post-navigation {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+</style>
+
+  </section>
+
+  <!-- Footer Section Start -->
+  <footer>
+    <div class="text">
+      <span>Junaedy Susanto | &#169; 2025 All Rights Reserved</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

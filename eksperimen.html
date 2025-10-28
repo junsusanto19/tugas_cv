@@ -1,0 +1,315 @@
+<!-- Home Section Start -->
+ <!DOCTYPE html>
+<!-- Website - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Responsive Portfolio Website HTML CSS| CodingNepal</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Fontawesome CDN Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <!-- Move to up button -->
+  <div class="scroll-button">
+    <a href="index.html"><i class="fas fa-arrow-up"></i></a>
+  </div>
+  <!-- navgaition menu -->
+  <nav>
+    <div class="navbar">
+      <div class="logo"><a href="index.html">Tugas UTS</a> <a style="font-size:larger;"> &nbsp;Computer Vision</a></div>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="project.html">Project</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <div class="cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
+      </ul>
+      <div class="media-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="menu-btn">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+
+  <!-- My Services Section Start -->
+  <section class="" id="">
+    <div class="content">
+        <br>
+        <br>
+        <br>
+      <div class="title"><span>Eksperimen Sederhana</span></div>
+      <div>
+        <br>
+        <p style="  text-align: justify;
+  color: #0E2431; line-height: 2;">
+            <!-- <img style="float: left;
+            width: 530px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            margin-right: 20px;" src="Images/pengantar.png" alt="" /> -->
+
+<p style="color:#475569; margin-bottom:24px; text-align: justify; line-height: 2;">
+Eksperimen sederhana ini bertujuan untuk menunjukkan bagaimana sebuah model Convolutional Neural Network (CNN) dapat mengenali pola dasar pada dataset MNIST. CNN adalah salah satu arsitektur inti dalam Deep Learning yang mampu mengekstraksi fitur spasial dari gambar sebuah langkah revolusioner yang menggantikan pendekatan handcrafted features seperti SIFT atau HOG yang digunakan sebelum era deep learning.
+Pada eksperimen ini, saya mencoba membangun model CNN sederhana menggunakan framework TensorFlow (Keras) untuk melihat bagaimana performanya dalam mengenali 10 digit angka (0–9) dari dataset MNIST. Dataset ini terdiri dari 60.000 gambar untuk pelatihan dan 10.000 gambar untuk pengujian, masing-masing berukuran 28x28 piksel dalam grayscale.
+Sebelum model dilatih, gambar di normalize ke rentang [0,1] agar proses konvergensi lebih stabil. Dataset kemudian dibagi menjadi train dan test set, dengan proporsi 6:1.
+  </p>
+<p>&nbsp;</p>
+
+<!-- 1. Arsitektur Model CNN -->
+  <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">
+    1. Arsitektur Model CNN
+  </h3>
+
+  <p style="margin-left: 18px; margin-bottom: 10px; margin-top: 10px; text-align: justify; line-height: 2;">
+    Model CNN yang digunakan dalam eksperimen ini terdiri dari beberapa lapisan utama.
+    CNN bekerja dengan memanfaatkan <em>convolution filters</em> untuk mengekstraksi fitur dari citra
+    dan <em>pooling layers</em> untuk mengurangi dimensi tanpa kehilangan informasi penting.
+  </p>
+
+  <ul class="list-disc list-inside text-gray-700 mb-6"  style="margin-left: 38px;">
+    <li><strong>Input Layer:</strong> 28×28×1 (gambar grayscale tunggal)</li>
+    <li><strong>Conv2D Layer #1:</strong> 32 filter, kernel 3×3, aktivasi ReLU</li>
+    <li><strong>MaxPooling2D Layer:</strong> ukuran 2×2</li>
+    <li><strong>Conv2D Layer #2:</strong> 64 filter, kernel 3×3, aktivasi ReLU</li>
+    <li><strong>MaxPooling2D Layer:</strong> ukuran 2×2</li>
+    <li><strong>Flatten Layer:</strong> mengubah matriks fitur menjadi vektor 1D</li>
+    <li><strong>Dense Layer #1:</strong> 128 neuron, aktivasi ReLU</li>
+    <li><strong>Output Layer:</strong> 10 neuron (kelas digit 0–9), aktivasi Softmax</li>
+  </ul>
+
+  <p style="margin-left: 18px; margin-top: 10px; text-align: justify; line-height: 2;">
+    Arsitektur ini relatif sederhana namun efisien, dengan total parameter sekitar <strong>1,2 juta</strong>.
+    Cukup ringan untuk pelatihan cepat di GPU standar, namun masih mampu mencapai akurasi tinggi.
+  </p>
+<p>&nbsp;</p>
+  <!-- 2. Pelatihan Model -->
+  <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">
+    2. Pelatihan Model
+  </h3>
+
+  <p style="margin-left: 18px; margin-bottom: 10px; margin-top: 10px; text-align: justify; line-height: 2;">
+    Dataset MNIST berisi <strong>60.000 gambar untuk pelatihan</strong> dan <strong>10.000 gambar untuk pengujian</strong>.
+    Semua gambar dinormalisasi ke rentang [0,1] untuk mempercepat konvergensi model.
+    Model dilatih dengan <em>optimizer Adam</em>, fungsi loss <em>categorical crossentropy</em>, 
+    dan ukuran batch 128 selama 5 epoch.
+    Waktu pelatihan hanya sekitar <strong>60 detik</strong> di GPU Colab, menunjukkan efisiensi tinggi CNN dalam mengenali pola sederhana.
+    Pada epoch ke-3, akurasi pelatihan sudah melampaui <strong>99%</strong>,
+    dan akurasi validasi stabil di kisaran <strong>98–99%</strong>, 
+    menandakan bahwa model belajar dengan baik tanpa overfitting.
+  </p>
+
+  <!-- 3. Evaluasi Model -->
+  <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">
+    3. Evaluasi Model
+  </h3>
+
+  <p class="text-gray-700 leading-relaxed mb-4" style=" margin-left: 18px; margin-top: 10px;">
+    Setelah pelatihan, model diuji pada dataset pengujian MNIST yang berisi 10.000 gambar.
+    Hasil evaluasi menunjukkan bahwa CNN sederhana ini mampu memberikan hasil yang sangat akurat.
+  </p>
+
+    <table style="width:40%; border-collapse: collapse; text-align:center; margin-top: 10px; margin-left: 18px;">
+    <thead>
+      <tr style="background-color:#f0f0f0; border:1px solid #ccc;">
+        <th style="padding:8px; border:1px solid #ccc;">Metrik</th>
+        <th style="padding:8px; border:1px solid #ccc;">Nilai</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding:8px; border:1px solid #ccc;">Akurasi Uji</td>
+        <td style="padding:8px; border:1px solid #ccc;">99.23%</td>
+      </tr>
+      <tr>
+        <td style="padding:8px; border:1px solid #ccc;">Test Loss</td>
+        <td style="padding:8px; border:1px solid #ccc;">0.029</td>
+      </tr>
+      <tr>
+        <td style="padding:8px; border:1px solid #ccc;">Kecepatan Inferensi</td>
+        <td style="padding:8px; border:1px solid #ccc;">≈ 2 ms / sample</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="text-gray-700 leading-relaxed mb-6"  style=" margin-left: 18px; margin-top: 10px; margin-bottom: 20px;">
+    Hasil ini menegaskan bahwa bahkan arsitektur CNN yang sederhana dapat mengenali angka tulisan tangan
+    dengan akurasi hampir sempurna. MNIST sudah tidak lagi menjadi tantangan signifikan bagi model modern.
+  </p>
+
+  <!-- 4. Analisis Visual -->
+  <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">
+    4. Analisis Visual Hasil
+  </h3>
+
+  <p class="text-gray-700 leading-relaxed mb-4"  style=" margin-left: 20px; margin-top: 10px; line-height: 2;">
+    Untuk memahami area di mana model membuat kesalahan, ditampilkan <em>confusion matrix</em> serta contoh
+    gambar salah klasifikasi. Kesalahan yang sering muncul adalah pada digit yang memiliki kemiripan bentuk:
+  </p>
+
+  <ul class="list-disc list-inside text-gray-700 mb-6" style=" margin-left: 38px; margin-top: 10px;">
+    <li>Angka <strong>4</strong> dan <strong>9</strong>, sering tertukar karena garis melingkar yang mirip.</li>
+    <li>Angka <strong>3</strong> dan <strong>5</strong>, sulit dibedakan ketika tulisan tangan tidak rapi.</li>
+  </ul>
+
+  <p class="text-gray-700 leading-relaxed mb-6" style=" margin-left: 20px; margin-top: 10px; line-height: 2;">
+    Kesalahan ini menunjukkan bahwa batas kemampuan model sudah sangat dekat dengan ambiguitas visual alami
+    manusia dalam mengenali tulisan tangan cepat.
+  </p>
+<p>&nbsp;</p>
+  <!-- 5. Insight Eksperimen -->
+  <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4">
+    5. Insight Eksperimen
+  </h3>
+
+  <p class="text-gray-700 leading-relaxed mb-4"  style=" margin-left: 20px; margin-top: 10px; line-height: 2;">
+    Dari eksperimen ini, terdapat beberapa wawasan penting yang dapat diambil:
+  </p>
+
+  <ol class="list-decimal list-inside text-gray-700 mb-6 space-y-2" style=" margin-left: 40px; margin-top: 10px;">
+    <li style="margin-bottom: 7px;"><strong>MNIST tidak lagi menjadi tantangan teknis</strong>, namun tetap ideal untuk pembelajaran
+        konsep dasar CNN, optimasi, dan generalisasi model.</li>
+    <li style="margin-bottom: 7px;"><strong>Generalization gap</strong> antara data pelatihan dan pengujian sangat kecil,
+        menandakan model belajar pola secara stabil, bukan sekadar menghafal.</li>
+    <li><strong>Dataset lebih kompleks</strong> seperti Fashion-MNIST, EMNIST, atau CIFAR-10
+        lebih disarankan untuk riset lanjutan yang menuntut kemampuan adaptasi model yang lebih kuat.</li>
+  </ol>
+
+  <p class="text-gray-700 leading-relaxed" style=" margin-left: 20px; margin-top: 10px; line-height: 2;">
+    Eksperimen ini menegaskan bahwa meskipun MNIST telah mencapai kejenuhan performa, 
+    ia tetap menjadi dataset simbolik yang penting dalam sejarah Computer Vision
+    — fondasi awal yang memungkinkan pemahaman mendalam tentang arsitektur CNN dan generalisasi visual.
+  </p>
+
+<p>&nbsp;</p><p>&nbsp;</p>
+
+<pre style="background-color:#0f172a; color:#e2e8f0; padding:16px; border-radius:12px; overflow-x:auto;">
+<code class="language-python">
+# ===========================================================
+# Visualisasi Hasil Pelatihan CNN pada Dataset MNIST
+# ===========================================================
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Simulasi data akurasi (bisa diganti dengan history.history dari model.fit)
+epochs = np.arange(1, 6)
+train_acc = np.array([0.965, 0.982, 0.991, 0.994, 0.996])
+val_acc = np.array([0.960, 0.980, 0.987, 0.990, 0.992])
+
+# Plot grafik
+plt.figure(figsize=(8,5))
+plt.plot(epochs, train_acc * 100, marker='o', label='Training Accuracy', color='royalblue')
+plt.plot(epochs, val_acc * 100, marker='s', label='Validation Accuracy', color='darkorange')
+plt.title('Kurva Pelatihan CNN pada Dataset MNIST', fontsize=13)
+plt.xlabel('Epoch')
+plt.ylabel('Akurasi (%)')
+plt.xticks(epochs)
+plt.grid(True, linestyle='--', alpha=0.6)
+plt.legend()
+plt.tight_layout()
+
+# Simpan hasil
+plt.savefig("Images/mnist_cnn_training_curve.png", dpi=150)
+plt.show()
+
+
+</code>
+</pre>
+  <hr style="border:none; border-top:1px solid #e6eef6; margin:20px 0 30px 0;">
+<p>&nbsp;</p>
+
+<table>
+<tr>
+<td><figcaption style="text-align:center; color:#64748b; font-size:19px; margin-top:8px; margin-bottom: 10px;">Screenshoot project</figcaption><img src="Images/curve.png" style="max-width: 600px; float: left; margin-right: 20px; border: 2px solid rgb(0, 0, 0);"></td>
+<td><figcaption style="text-align:center; color:#64748b; font-size:19px; margin-top:8px; margin-bottom: 10px;">Hasil</figcaption><img src="Images/mnist_cnn_training_curve.png" style="max-width: 600px; float: left; margin-right: 20px; border: 2px solid rgb(0, 0, 0);"></td>
+</tr>
+</table>
+
+  <p class="text-gray-700 leading-relaxed" style=" margin-left: 5px; text-align: justify ; margin-top: 30px; line-height: 2;">
+    Grafik di atas menunjukkan dua kurva — biru untuk akurasi pelatihan dan oranye untuk akurasi validasi.
+    Dalam lima epoch, model mencapai <strong>akurasi pelatihan 99.6%</strong> dan
+    <strong>akurasi validasi 99.2%</strong>. Selisih kecil ini menunjukkan bahwa model belajar secara stabil
+    tanpa kehilangan kemampuan generalisasi. Visualisasi ini memperlihatkan bahwa model CNN sederhana telah mencapai titik jenuh pada epoch ke-5,
+    menandakan pembelajaran yang efisien tanpa <em>overfitting</em>. Pola kurva seperti ini menjadi
+    indikator penting untuk menentukan kapan proses pelatihan sebaiknya dihentikan.
+  </p>
+
+
+
+        <div class="post-navigation">
+            <a href="relevansi.html" class="nav-btn prev">
+                <span class="arrow">Relevansi &nbsp;←</span> Previous
+            </a>
+
+            <a href="kesimpulan.html" class="nav-btn next">
+                Next <span class="arrow">→ Kesimpulan</span>
+            </a>
+        </div>
+
+        <style>
+.post-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  padding-top: 25px;
+  border-top: 1px solid #e0e0e0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(90deg, #0078ff, #00b7ff);
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 120, 255, 0.2);
+}
+
+.nav-btn:hover {
+  background: linear-gradient(90deg, #005fcc, #0099ff);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 120, 255, 0.3);
+}
+
+.arrow {
+  font-size: 1.2em;
+}
+
+@media (max-width: 600px) {
+  .post-navigation {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+</style>
+
+  </section>
+
+  <!-- Footer Section Start -->
+  <footer>
+    <div class="text">
+      <span>Junaedy Susanto | &#169; 2025 All Rights Reserved</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

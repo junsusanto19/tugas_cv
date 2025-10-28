@@ -1,0 +1,239 @@
+<!-- Home Section Start -->
+ <!DOCTYPE html>
+<!-- Website - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Responsive Portfolio Website HTML CSS| CodingNepal</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Fontawesome CDN Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <!-- Move to up button -->
+  <div class="scroll-button">
+    <a href="index.html"><i class="fas fa-arrow-up"></i></a>
+  </div>
+  <!-- navgaition menu -->
+  <nav>
+    <div class="navbar">
+      <div class="logo"><a href="index.html">Tugas UTS</a> <a style="font-size:larger;"> &nbsp;Computer Vision</a></div>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="project.html">Project</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <div class="cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
+      </ul>
+      <div class="media-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="menu-btn">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+
+  <!-- My Services Section Start -->
+  <section class="" id="">
+    <div class="content">
+        <br>
+        <br>
+        <br>
+      <div class="title"><span>Karakteristik</span></div>
+      <div>
+        <br>
+        <p style="  text-align: justify;
+  color: #0E2431; line-height: 2;">
+            <!-- <img style="float: left;
+            width: 530px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            margin-right: 20px;" src="Images/pengantar.png" alt="" /> -->
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/MnistExamples.png"
+       alt="Contoh contoh gambar MNIST - digit tulisan tangan 0-9"
+       style="display:block; margin:20px auto; max-width:560px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+<p>&nbsp;</p>
+<p style="  text-align: justify;
+  color: #0E2431; line-height: 2;">
+    Bagian ini membahas aspek teknis MNIST secara mendalam: struktur data, ukuran dan tipe citra, format penyimpanan asli, preprocess
+    yang diterapkan saat pembentukan dataset, statistik kelas dan distribusi, serta implikasi teknis ketika digunakan dalam eksperimen
+    machine learning. Pernyataan teknis inti tentang MNIST (jumlah sampel, ukuran 28×28, dan pembentukan train/test) dapat diverifikasi
+    pada sumber resmi MNIST.
+<p>&nbsp;</p>
+
+  <h3 style="color:#0b5ed7;">Ringkasan angka-angka kunci</h3>
+  <ul style="margin-left:20px;">
+    <li style="margin-left: 30px; margin-bottom: 5px; margin-top: 10px;"><strong>Total sampel:</strong> 70.000 citra (60.000 training, 10.000 test).</li>
+    <li style="margin-left: 30px; margin-bottom: 5px;"><strong>Resolusi:</strong> 28 × 28 piksel (grayscale), rentang intensitas 0–255 pada file biner; sering dinormalisasi ke [0,1] atau [-1,1].</li>
+    <li style="margin-left: 30px; margin-bottom: 5px;"><strong>Kelas:</strong> 10 kelas — digit 0 sampai 9 (discrete labels: 0..9).</li>
+    <li style="margin-left: 30px; margin-bottom: 5px;"><strong>Format penyimpanan asli:</strong> format IDX (binary IDX3/IDX1 untuk gambar dan label). Banyak library menyediakan loader built-in.</li>
+    <li style="margin-left: 30px; margin-bottom: 5px;"><strong>Preprocessing historis:</strong> size-normalization ke 20×20 kemudian ditempatkan ke 28×28, anti-aliasing (grayscale) dan translasi agar pusat massa piksel berada di tengah.</li>
+  </ul>
+<p>&nbsp;</p>
+  <h3 style="color:#0b5ed7;">Format file & cara memuat (IDX)</h3>
+  <p style="  text-align: justify;
+  color: #0E2431; line-height: 2;">
+    Format asli MNIST disimpan sebagai empat file IDX sederhana: <code>train-images-idx3-ubyte</code>, <code>train-labels-idx1-ubyte</code>,
+    <code>t10k-images-idx3-ubyte</code>, dan <code>t10k-labels-idx1-ubyte</code>. IDX adalah format biner ringkas yang merekam metadata (tipe,
+    dimensi) lalu data raw. Kelebihan format ini: hemat ruang, mudah diparsing; kekurangannya: bukan format gambar standar (PNG/JPEG),
+    sehingga kadang perlu konversi bila Anda ingin menampilkan contoh citra atau menyimpan ulang. Informasi implementasi loader IDX banyak tersedia
+    di perpustakaan (mis. torchvision.datasets.MNIST, tensorflow.keras.datasets.mnist) dan juga pada halaman resmi MNIST. :contentReference[oaicite:2]{index=2}
+  
+
+  <pre style="background:#f7f7fb; padding:12px; border-radius:8px; overflow:auto;">
+  <!-- Contoh singkat memuat MNIST dengan PyTorch -->
+  import torchvision
+  from torchvision import transforms
+  train = torchvision.datasets.MNIST(root='./data', train=True, download=True,
+                                    transform=transforms.ToTensor())
+  test  = torchvision.datasets.MNIST(root='./data', train=False, download=True,
+                                    transform=transforms.ToTensor())
+  </pre>
+<p>&nbsp;</p>
+  <h3 style="color:#0b5ed7;">3.3 Detil preprocess saat pembentukan dataset</h3>
+    Langkah-langkah preprocessing historis yang paling sering dikutip adalah:
+  
+  <ol style="margin-left:20px;">
+    <li style="margin-left: 30px; margin-bottom: 5px; margin-top: 10px;"><strong>Size normalization:</strong> setiap karakter diperkecil/diubah skala agar muat dalam kotak 20×20 piksel sembari mempertahankan rasio aspek.</li>
+    <li style="margin-left: 30px; margin-bottom: 5px;"><strong>Anti-aliasing / grayscaling:</strong> hasil downsampling menghasilkan nilai intensitas grey (bukan hanya binary), sehingga citra memiliki nuansa abu-abu yang merepresentasikan tepi halus.</li>
+    <li style="margin-left: 30px; margin-bottom: 5px;"><strong>Centering:</strong> gambar ditempatkan pada kanvas 28×28 dengan menerjemahkan posisi sehingga pusat massa (center of mass) dari piksel berada di tengah frame. Ini memastikan posisi relatif digit konsisten antar sampel. :contentReference[oaicite:3]{index=3}</li>
+  </ol>
+<p>&nbsp;</p>
+  <h3 style="color:#0b5ed7;">Statistik kelas & distribusi</h3>
+  <p style="  text-align: justify;
+  color: #0E2431; line-height: 2;">
+    MNIST memiliki 10 kelas yang secara konseptual seimbang pada tingkat nominal (setiap kelas hadir dalam jumlah besar). Namun secara teknis,
+    distribusi frekuensi tiap digit tidak sepenuhnya identik — beberapa digit (mis. '1' atau '0') cenderung muncul sedikit lebih sering tergantung
+    kumpulan asli yang diambil dari NIST. Ketidakseimbangan tersebut biasanya kecil dan tidak mengganggu pelatihan model dasar, tetapi saat
+    melakukan analisis kesalahan (error analysis) atau eksperimen few-shot, penting untuk memeriksa frekuensi per-kelas. Tools modern (pandas,
+    matplotlib) bisa dipakai untuk menghitung dan mem-visualisasi histogram label untuk memastikan apakah samplenya seimbang untuk eksperimen tertentu.
+  
+<p>&nbsp;</p>
+  <h3 style="color:#0b5ed7;">Representasi numerik & normalisasi untuk training</h3>
+
+    Praktik yang umum diterapkan sebelum melewatkan citra ke model adalah:
+
+  <ul style="margin-left:20px;">
+    <li style="margin-left: 30px; margin-bottom: 5px; margin-top: 10px;"><strong>Konversi tipe:</strong> dari uint8 (0–255) ke float32.</li>
+    <li style="margin-left: 30px; margin-bottom: 5px;"><strong>Skala:</strong> membagi dengan 255 untuk mendapatkan rentang [0,1] atau melakukan normalisasi z-score berdasarkan mean/std dataset.</li>
+    <li style="margin-left: 30px; margin-bottom: 5px;"><strong>Augmentasi ringan (opsional):</strong> rotasi kecil, translasi, noise Gaussian, shear — berguna untuk mengevaluasi robustness. Perlu diingat augmentasi yang berlebihan bisa mengubah sifat tugas (mis. 180° rotasi membuat 6 menjadi 9 dll.).</li>
+  </ul>
+  <p>&nbsp;</p>
+  <h3 style="color:#0b5ed7;">Implikasi teknis untuk arsitektur & eksperimen</h3>
+  
+    Karena ukuran citra yang kecil (28×28), MNIST memungkinkan eksperimen sangat cepat dan penggunaan arsitektur ringan:
+
+  <ul style="margin-left:20px;">
+    <li style="margin-left: 30px; margin-bottom: 5px; margin-top: 10px;"><strong>Parameter kecil:</strong> model sederhana (MLP dengan 1–2 hidden layer atau CNN kecil seperti LeNet-5) sudah mencapai akurasi tinggi, sehingga riset perlu hati-hati: perbaikan kecil di MNIST belum tentu bermakna di dataset lain.</li>
+    <li style="margin-left: 30px; margin-bottom: 5px;"><strong>Batch size & throughput:</strong> dimensi kecil memperbolehkan batch besar sehingga konvergensi cepat; namun benchmarking harus mempertimbangkan throughput (images/sec) bila membandingkan perangkat keras.</li>
+    <li style="margin-left: 30px; margin-bottom: 5px;"><strong>Precision & storage:</strong> karena input kecil, Anda bisa menyimpan dataset dalam berbagai format (IDX, Numpy .npy, HDF5) tergantung kebutuhan eksperimen (kecepatan I/O vs portabilitas).</li>
+  </ul>
+  <p>&nbsp;</p>
+  <h3 style="color:#0b5ed7;">Contoh: konversi dan melihat sample (Python, tanpa library besar)</h3>
+  <pre style="background:#f7f7fb; padding:12px; border-radius:8px; overflow:auto;">
+  import urllib.request, gzip, numpy as np
+  def load_images(url):
+      with gzip.open(urllib.request.urlopen(url)) as f:
+          data = f.read()
+      # skip 16-byte header, parse uint8
+      images = np.frombuffer(data, dtype=np.uint8, offset=16)
+      images = images.reshape(-1, 28, 28)
+      return images
+  imgs = load_images('http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz')
+  print(imgs.shape)  # (60000, 28, 28)
+  </pre>
+
+  <hr style="margin:40px 0;">
+
+            <P>&nbsp;</P>
+            <B>Referensi:</B>
+            <li style="margin-left: 30px; margin-bottom: 5px;">
+            Greydanus, S., et al. (2024). <em>Scaling Down Deep Learning with MNIST-1D</em>. arXiv:2402.05821. <a href="https://www.lri.fr/~marc/Master2/MNIST_doc.pdf" target="_blank">https://www.lri.fr/~marc/Master2/MNIST_doc.pdf</a> 
+            </li>
+            <li style="margin-left: 30px; margin-bottom: 5px;">
+                Greydanus, S., et al. (2024). <em>Scaling Down Deep Learning with MNIST-1D</em>. arXiv:2402.05821. <a href="https://arxiv.org/abs/2011.14439" target="_blank">https://arxiv.org/abs/2011.14439</a>
+            </li>
+            <li style="margin-left: 30px; margin-bottom: 5px;">
+                Alzubaidi, L., et al. (2023). <em>A survey on deep learning tools dealing with data scarcity</em>. Journal of Big Data. Springer. <a href="https://journalofbigdata.springeropen.com/articles/10.1186/s40537-023-00727-2" target="_blank">https://journalofbigdata.springeropen.com/articles/10.1186/s40537-023-00727-2</a>
+            </li>
+            <li style="margin-left: 30px; margin-bottom: 5px;">
+                Brijeshkumar Y. Panchal (2022). <em>Study and Develop a Convolutional Neural Network for MNIST Handwritten Digit Classification. <a href="https://www.researchgate.net/publication/361728427_Study_and_Develop_a_Convolutional_Neural_Network_for_MNIST_Handwritten_Digit_Classification" target="_blank">https://www.researchgate.net/publication/361728427_Study_and_Develop_a_Convolutional_Neural_Network_for_MNIST_Handwritten_Digit_Classification</a>
+            </li>
+      </div>
+
+        <div class="post-navigation">
+            <a href="latar_belakang.html" class="nav-btn prev">
+                <span class="arrow">Latar Belakang &nbsp;←</span> Previous
+            </a>
+
+            <a href="lebih_kurang.html" class="nav-btn next">
+                Next <span class="arrow">→ Keunggulan & Keterbatasan</span>
+            </a>
+        </div>
+
+        <style>
+.post-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  padding-top: 25px;
+  border-top: 1px solid #e0e0e0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(90deg, #0078ff, #00b7ff);
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 120, 255, 0.2);
+}
+
+.nav-btn:hover {
+  background: linear-gradient(90deg, #005fcc, #0099ff);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 120, 255, 0.3);
+}
+
+.arrow {
+  font-size: 1.2em;
+}
+
+@media (max-width: 600px) {
+  .post-navigation {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+</style>
+
+  </section>
+
+  <!-- Footer Section Start -->
+  <footer>
+    <div class="text">
+      <span>Junaedy Susanto | &#169; 2025 All Rights Reserved</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
